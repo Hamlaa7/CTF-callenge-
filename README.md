@@ -5,7 +5,7 @@ The main goal of this challenge is: the developer creates a key using weak param
 ## 🛠️ Tools Used:
 - **GCC**: For compiling the C challenge and solution code
 - **VS Code**: Code editing and development
-- **Msys** 
+- **Msys**:It provides a Unix-like environment for windows
 - **Python**: Used with `Sympy` and `pwntools` for brute-force key recovery
 - **Nmap**: Service discovery and DHKE vulnerability mapping
 - **Tshark**: Network analysis and key extraction from `.pcap` files
