@@ -1,0 +1,5 @@
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
+WORKDIR /challenge
+COPY dh_challenge.exe .
+EXPOSE 80
+CMD ["powershell", "-Command", "$listener = New-Object System.Net.HttpListener; $listener.Prefixes.Add('http://*:80/'); $listener.Start(); Write-Host 'Listening on port 80...'; while ($true) { $context = $listener.GetContext(); $request = $context.Request; $response = $context.Response; $filePath = 'dh_challenge.exe'; $buffer = [System.IO.File]::ReadAllBytes($filePath); $response.ContentLength64 = $buffer.Length; $response.OutputStream.Write($buffer, 0, $buffer.Length); $response.OutputStream.Close(); }"]
